@@ -10,17 +10,19 @@ Système: Linux Ubuntu.
 - Flask: Flask 3.1.3
 
 ## Ce qui a ete fait
+1. Création du dossier `~/TVL501` et copie du projet `facturecloud` dans `~/TVL501/facturecloud`.
+2. Ouverture du projet dans l'éditeur et vérification de la route `/sante` dans `api-factures/main.py`.
+3. Création et activation de l'environnement virtuel `.venv` (`python3 -m venv .venv` puis `source .venv/bin/activate`).
+4. Installation de Flask (`pip install flask`) et d'autres bibliotheques requises (`gunicorn`, `pytest`) 
+5. Lancement de `api-factures` sur le port 8080 (Terminal 1) et de `service-calcul` sur le port 8081 (Terminal 2).
+6. Vérification des routes `/sante`, `/factures/...` et `/tva` (cas valides et erreurs 404/400), puis test des erreurs d'arrêt et de mauvais dossier.
 
-1. Création de l'arborescence du projet `facturecloud` et de l'environnement virtuel (`python3 -m venv .venv`).
-2. Installation des bibliothèques requises (`flask`, `gunicorn`, `pytest`).
-3. Écriture et validation des tests unitaires (`pytest` avec 4 tests réussis).
-4. Lancement des microservices `api-factures` (port 8080), `service-calcul` (port 8081) et `service-notification` (port 8082).
-5. Vérification des routes de santé (`/sante`) et de calcul de la TVA (`/tva`) via `curl`.
 
 ## Ce que j'ai observé
 
 - La fonction sante renvoie: {"statut":"ok"} avec le code 200
 - TVA pour 1000: 193 ; TVA pour 200 que j'attendais: 39, obtenue: 39
+
 
 ## Problèmes rencontrés
 
